@@ -24,8 +24,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  	<a href="member.action" >用户中心</a>
     <s:form action="search">
-    	<div align="center"><s:textfield name="search" /><s:submit value="搜索" method="searchProduct" /></div>
+    	<div align="center">
+    		<s:textfield name="search" theme = "simple"/>
+    		<s:submit value="搜索" method="searchProduct" theme = "simple"/>
+    	</div>
     </s:form>
   </body>
 </html>

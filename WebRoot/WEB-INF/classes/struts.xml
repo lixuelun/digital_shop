@@ -10,5 +10,9 @@
 			<result name="addSuccess">/addShoppingCart_success.jsp</result>
 			<result name="addFalse">/addShoppingCart_false.jsp</result>
 		</action>
+		<action name="member" class="member">
+			<result name="success">/member_information.jsp</result>
+			<result name="false">/index.jsp</result>
+		</action>
 	</package>
 </struts>    

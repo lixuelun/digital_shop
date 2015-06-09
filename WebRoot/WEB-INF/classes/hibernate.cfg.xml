@@ -21,6 +21,7 @@
 		<property name="myeclipse.connection.profile">test</property>
 		<mapping resource="com/domain/Product.hbm.xml" />
 		<mapping resource="com/domain/ShoppingCart.hbm.xml" />
+		<mapping resource="com/domain/Member.hbm.xml" />
 
 	</session-factory>
 

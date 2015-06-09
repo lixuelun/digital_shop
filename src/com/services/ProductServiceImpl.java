@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.dao.ProductDao;
+import com.domain.Member;
 import com.domain.Product;
 
 
@@ -29,6 +30,14 @@ public class ProductServiceImpl implements ProductService{
 
 	public boolean addShoppingCart(String img, String name, double price, int quantity) {
 		return productDao.addShoppingCart(img, name, price,quantity);
+	}
+
+	public List<Member> searchMemberByName(String name) {
+		return productDao.searchMemberByName(name);
+	}
+
+	public boolean updateMemPass(String name, String newMemPass) {
+		return productDao.updateMemPass(name, newMemPass);
 	}
 
 }

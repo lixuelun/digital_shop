@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import org.hibernate.SessionFactory;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import com.domain.Member;
 import com.domain.Product;
 import com.domain.ShoppingCart;
 
@@ -43,5 +44,24 @@ public class ProductDaoImpl implements ProductDao{
 			return false;
 		else
 			return true;
+	}
+
+	public List<Member> searchMemberByName(String name) {
+		String hql="from Member as m where m.memName = '"+name+"'";
+		List<Member> list=sessionFactory.getCurrentSession().createQuery(hql).list();
+		return list;
+	}
+
+	public boolean updateMemPass(String name, String newMemPass) {
+		String hql="update Member as m set m.memPass='"+newMemPass+"' where m.memName='"+name+"'";
+		sessionFactory.getCurrentSession().createQuery(hql).executeUpdate();
+		String hql2="from Member as m where m.memName = '"+name+"'";
+		List<Member> list=sessionFactory.getCurrentSession().createQuery(hql2).list();
+		for(Member t:list)
+			if(t.getMemPass()==newMemPass){
+				System.out.print(t.getMemPass());
+				return true;
+			}
+		return false;
 	}
 }

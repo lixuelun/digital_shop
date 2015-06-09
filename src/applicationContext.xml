@@ -23,6 +23,8 @@
 	
 	<bean id="searchProduct" class="com.actions.SearchAction" />
 	<bean id="product" class="com.actions.ProductAction" />
+	<bean id="member" class="com.actions.MemberAction" />
+	
 	<bean id="productDao" class="com.dao.ProductDaoImpl" />
 	<bean id="productService" class="com.services.ProductServiceImpl" />
 </beans>

@@ -42,7 +42,9 @@ public class ProductAction extends ActionSupport{
 			ActionContext.getContext().getSession().put("img", t.getProImg());
 			ActionContext.getContext().getSession().put("name", t.getProName());
 			ActionContext.getContext().getSession().put("price", t.getProPrice());
-		}	
+		}
+		String searchBox=(String) ActionContext.getContext().getSession().get("searchBox");
+		request.setAttribute("searchBox", searchBox);
 		request.setAttribute("list", list);
 		return SUCCESS;
 	}

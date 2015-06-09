@@ -39,5 +39,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   		<p><b>商品信息</b></p>
   		<div id="div3"><s:property value="#product.proContent" /></div>
   	</s:iterator>
+  	<a href="search.action?search=<s:property value="#request.searchBox" />" >返回</a>
   </body>
 </html>
