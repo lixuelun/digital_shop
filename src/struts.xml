@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="struts" extends="struts-default" namespace="/">
+		<action name="search" class="searchProduct">
+			<result name="success">/show_product.jsp</result>
+
+		</action>
+		<action name="back" class="backAction">
+			<result name="success">/index.jsp</result>
+
+		</action>
+	</package>
+</struts>    
