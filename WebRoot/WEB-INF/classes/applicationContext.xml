@@ -24,4 +24,9 @@
 	<bean id="searchProduct" class="com.actions.searchAction" />
 	<bean id="productDao" class="com.dao.ProductDaoImpl" />
 	<bean id="productService" class="com.services.ProductServiceImpl" />
+	
+	<!-- simpleem -->
+	<bean id="updateProduct" class="com.actions.updateAction" />
+	<bean id="updateService" class="com.services.updateServiceImpl" /> 
+	
 </beans>

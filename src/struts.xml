@@ -4,7 +4,10 @@
 	<package name="struts" extends="struts-default" namespace="/">
 		<action name="search" class="searchProduct">
 			<result name="success">/show_product.jsp</result>
-
 		</action>
+		<action name="update" class="updateProduct">
+			<result name="success">/show_product.jsp</result>
+		</action>
+		
 	</package>
 </struts>    
