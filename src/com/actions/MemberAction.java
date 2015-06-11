@@ -23,10 +23,50 @@ public class MemberAction extends ActionSupport{
 	
 	public String updateMemPass(){
 		String name=(String)ActionContext.getContext().getSession().get("username");
-		if(productService.updateMemPass(name,newMemPass))
-			return SUCCESS;
-		else 
-			return "false";
+		HttpServletRequest request=ServletActionContext.getRequest();		
+		if(productService.updateMemPass(name,newMemPass)){
+			request.setAttribute("tip", "修改密码成功");
+			return execute();
+		}else{
+			request.setAttribute("tip", "修改密码失败");
+			return execute();
+		}		
+	}
+	
+	public String updateMemAdds(){
+		String name=(String)ActionContext.getContext().getSession().get("username");
+		HttpServletRequest request=ServletActionContext.getRequest();		
+		if(productService.updateMemAdds(name,newMemAdds)){
+			request.setAttribute("tip", "修改地址成功");
+			return execute();
+		}else{
+			request.setAttribute("tip", "修改地址失败");
+			return execute();
+		}		
+	}
+	
+	public String updateMemTel(){
+		String name=(String)ActionContext.getContext().getSession().get("username");
+		HttpServletRequest request=ServletActionContext.getRequest();		
+		if(productService.updateMemTel(name,newMemTel)){
+			request.setAttribute("tip", "修改电话成功");
+			return execute();
+		}else{
+			request.setAttribute("tip", "修改电话失败");
+			return execute();
+		}		
+	}
+	
+	public String updateMemMail(){
+		String name=(String)ActionContext.getContext().getSession().get("username");
+		HttpServletRequest request=ServletActionContext.getRequest();		
+		if(productService.updateMemMail(name,newMemMail)){
+			request.setAttribute("tip", "修改e-mail成功");
+			return execute();
+		}else{
+			request.setAttribute("tip", "修改e-mail失败");
+			return execute();
+		}		
 	}
 	
 	public String getNewMemPass() {

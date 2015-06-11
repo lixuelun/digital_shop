@@ -51,13 +51,16 @@ public class ProductAction extends ActionSupport{
 	
 	//点击加入购物车按钮执行的方法
 	public String addShoppingCart(){
+		//登陆完成把用户名存入session中
+		ActionContext.getContext().getSession().put("username", "member1");
+		String username=(String) ActionContext.getContext().getSession().get("username");
 		HttpServletRequest request=ServletActionContext.getRequest();
 		String img=(String) ActionContext.getContext().getSession().get("img");
 		String name=(String) ActionContext.getContext().getSession().get("name");
 		Double price=(Double) ActionContext.getContext().getSession().get("price");
 		int number = Integer.parseInt(quantity);
 		request.setAttribute("proname", name);
-		if(productService.addShoppingCart(img,name,price,number))
+		if(productService.addShoppingCart(img,name,price,number,username))
 			return "addSuccess";
 		else
 			return "addFalse";

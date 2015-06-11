@@ -12,7 +12,6 @@
 		</action>
 		<action name="member" class="member">
 			<result name="success">/member_information.jsp</result>
-			<result name="false">/index.jsp</result>
 		</action>
 	</package>
 </struts>    

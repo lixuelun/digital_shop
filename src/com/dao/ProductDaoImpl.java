@@ -29,10 +29,9 @@ public class ProductDaoImpl implements ProductDao{
 		return list;
 	}
 
-	public boolean addShoppingCart(String img, String name, double price, int quantity) {
+	public boolean addShoppingCart(String img, String name, double price, int quantity, String username) {
 		ShoppingCart shoppingCart=new ShoppingCart();
-		//先随便插入个用户名,用户名id
-		shoppingCart.setAdminName("username");
+		shoppingCart.setAdminName(username);
 		shoppingCart.setImg(img);
 		shoppingCart.setName(name);
 		shoppingCart.setPrice(price);
@@ -53,15 +52,50 @@ public class ProductDaoImpl implements ProductDao{
 	}
 
 	public boolean updateMemPass(String name, String newMemPass) {
-		String hql="update Member as m set m.memPass='"+newMemPass+"' where m.memName='"+name+"'";
+		String hql="update Member as m set m.memPass ='"+newMemPass+"' where m.memName ='"+name+"'";
 		sessionFactory.getCurrentSession().createQuery(hql).executeUpdate();
 		String hql2="from Member as m where m.memName = '"+name+"'";
 		List<Member> list=sessionFactory.getCurrentSession().createQuery(hql2).list();
 		for(Member t:list)
-			if(t.getMemPass()==newMemPass){
-				System.out.print(t.getMemPass());
+			if(t.getMemPass().equals(newMemPass)){
 				return true;
-			}
+			}	
+		return false;
+	}
+
+	public boolean updateMemAdds(String name, String newMemAdds) {
+		String hql="update Member as m set m.memAdds ='"+newMemAdds+"' where m.memName ='"+name+"'";
+		sessionFactory.getCurrentSession().createQuery(hql).executeUpdate();
+		String hql2="from Member as m where m.memName = '"+name+"'";
+		List<Member> list=sessionFactory.getCurrentSession().createQuery(hql2).list();
+		for(Member t:list)
+			if(t.getMemAdds().equals(newMemAdds)){
+				return true;
+			}	
+		return false;
+	}
+
+	public boolean updateMemMail(String name, String newMemMail) {
+		String hql="update Member as m set m.memMail ='"+newMemMail+"' where m.memName ='"+name+"'";
+		sessionFactory.getCurrentSession().createQuery(hql).executeUpdate();
+		String hql2="from Member as m where m.memName = '"+name+"'";
+		List<Member> list=sessionFactory.getCurrentSession().createQuery(hql2).list();
+		for(Member t:list)
+			if(t.getMemMail().equals(newMemMail)){
+				return true;
+			}	
+		return false;
+	}
+
+	public boolean updateMemTel(String name, String newMemTel) {
+		String hql="update Member as m set m.memTel ='"+newMemTel+"' where m.memName ='"+name+"'";
+		sessionFactory.getCurrentSession().createQuery(hql).executeUpdate();
+		String hql2="from Member as m where m.memName = '"+name+"'";
+		List<Member> list=sessionFactory.getCurrentSession().createQuery(hql2).list();
+		for(Member t:list)
+			if(t.getMemMail().equals(newMemTel)){
+				return true;
+			}	
 		return false;
 	}
 }

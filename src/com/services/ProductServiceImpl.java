@@ -28,8 +28,8 @@ public class ProductServiceImpl implements ProductService{
 		return productDao.searchProductByName(name);
 	}
 
-	public boolean addShoppingCart(String img, String name, double price, int quantity) {
-		return productDao.addShoppingCart(img, name, price,quantity);
+	public boolean addShoppingCart(String img, String name, double price, int quantity, String username) {
+		return productDao.addShoppingCart(img, name, price,quantity, username);
 	}
 
 	public List<Member> searchMemberByName(String name) {
@@ -38,6 +38,18 @@ public class ProductServiceImpl implements ProductService{
 
 	public boolean updateMemPass(String name, String newMemPass) {
 		return productDao.updateMemPass(name, newMemPass);
+	}
+
+	public boolean updateMemAdds(String name, String newMemAdds) {
+		return productDao.updateMemAdds(name, newMemAdds);
+	}
+
+	public boolean updateMemMail(String name, String newMemMail) {
+		return productDao.updateMemMail(name, newMemMail);
+	}
+
+	public boolean updateMemTel(String name, String newMemTel) {
+		return productDao.updateMemTel(name, newMemTel);
 	}
 
 }

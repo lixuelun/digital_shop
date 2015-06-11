@@ -24,11 +24,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  	<s:if test="#request.tip!=null">
+  		提示：<s:property value="#request.tip" />
+  	</s:if>
 	<s:form action="member">
   		<table border="2">
     		<s:iterator value="#request.list" var="member">
   	  		<tr>
-  	  			<td>用户名：<s:property value="#member.memName" /><td>
+  	  			<td colspan="2">用户名：<s:property value="#member.memName" /><td>
   	  		</tr>
   	  		<tr>
   	  			<td>密码：<s:property value="#member.memPass" /></td>
