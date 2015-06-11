@@ -6,5 +6,7 @@ import com.domain.Back;
 
 public interface backDao {
 	//点击提交申请回执行该方法---还没添加参数
-	public List<Back> commitOfBack();
+
+	public void commitOfBack(int backPrice, String backReason,
+			String backContext);
 }

@@ -12,11 +12,18 @@ public class backDaoImpl implements backDao{
 	@Resource
 	private SessionFactory sessionFactory;
 
-	//public List<Back> commitOfBack() {
+	
+
+	public void commitOfBack(int backPrice, String backReason,
+			String backContext) {
+			Back back = new Back();
+			back.setBackPrice(backPrice);
+			back.setBackReason(backReason);
+			back.setBackContext(backContext);
+			sessionFactory.getCurrentSession().persist(back);
+			
 		
-		//String hql="from Back as b where b.='"+searchBox+"'";
-		//List<Back> list=sessionFactory.getCurrentSession().createQuery(hql).list();
-		//return list;
-	//}
+	}
+
 
 }

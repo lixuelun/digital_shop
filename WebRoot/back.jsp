@@ -42,29 +42,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   			</table>
   			</s:if>
   	</div>
+  	<p align="center"><b>填写退货资料:</b></p>
     <div align="center">
-    	<form action="/backAction" method="post" name="">
-    		 <table align="center">
+    	<s:form action="back">
+    		 <table>
     		 <tr>
-    		 <td>退货原因</td>
-    		 <td>
-    		 	<select >
+    		 <td>退款金额:</td>
+    		 <td><s:textfield name="backPrice" theme="simple"/>元</td>
+    		 </tr>
+    		 <tr >
+    		 <td>退货原因:</td>
+    		 	<td><select >
     		 		<option value="reason1">与卖家协商一致</option>
     		 		<option value="reason2">物品坏了</option>
     		 		<option value="reason3">货不对板</option>
     		 		<option value="reason4">其他</option>
-    		 	</select>
-    		 </td>
+    		 	</select></td>
+    		 	<br>
+    		 	<br>
+    		 	
+    		 	<!--  <s:select list="{'与卖家协商一致','物品坏了','货不对板','其他'}"  name="back.reason"></s:select>-->
+    		 
     		 </tr>
     		 <tr>
-    		 <td>说明:</td>
-    		 <td><input type="text" name="back_context"></td>
+    		<td> 退货说明：</td>
+    		<td><input type="text" style="height:70px;width:300px" name="backContext"/></td>
     		 </tr>
-    		 <tr>
-    		 	<input type="submit" value="提交申请">
-    		 </tr>    		 
+    		 <td></td>   		 
     		 </table>
-    	</form>
+    	</s:form>
     </div>
   </body>
 </html>

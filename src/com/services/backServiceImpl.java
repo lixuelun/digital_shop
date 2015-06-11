@@ -17,11 +17,12 @@ public class backServiceImpl implements backService{
 	@Resource
 	backDao bDao;
 	
-	@Transactional(propagation = Propagation.NOT_SUPPORTED)
 	
-	//此方法还没添加参数
-	public List<Back> commitOfBack() {
-		return bDao.commitOfBack();
+
+	public void commitOfBack(int backPrice, String backReason,
+			String backContext) {
+		bDao.commitOfBack(backPrice,backReason,backContext);
+		
 	}
 
 }
