@@ -5,13 +5,19 @@
 		<action name="search" class="searchProduct">
 			<result name="success">/show_product.jsp</result>
 		</action>
+		
 		<action name="product" class="product">
 			<result name="success">/product.jsp</result>
 			<result name="addSuccess">/addShoppingCart_success.jsp</result>
 			<result name="addFalse">/addShoppingCart_false.jsp</result>
 		</action>
+		
 		<action name="member" class="member">
 			<result name="success">/member_information.jsp</result>
+		</action>
+	
+		<action name="shoppingCart" class="shoppingCart">
+			<result name="success">/shoppingCart.jsp</result>
 		</action>
 	</package>
 </struts>    

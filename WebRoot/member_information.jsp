@@ -24,6 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  	<a href="search_product.jsp" >返回</a>
   	<s:if test="#request.tip!=null">
   		提示：<s:property value="#request.tip" />
   	</s:if>
@@ -36,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	  		<tr>
   	  			<td>密码：<s:property value="#member.memPass" /></td>
   	  			<td><s:textfield name="newMemPass" theme = "simple"/>
-  	  				<s:submit value="修改" method="updateMemPass"theme = "simple" />
+  	  				<s:submit value="修改" method="updateMemPass" theme = "simple" />
   	  			<td>
   	  		</tr>
   	  		<tr>

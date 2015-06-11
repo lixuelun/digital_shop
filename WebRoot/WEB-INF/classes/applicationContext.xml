@@ -24,7 +24,10 @@
 	<bean id="searchProduct" class="com.actions.SearchAction" />
 	<bean id="product" class="com.actions.ProductAction" />
 	<bean id="member" class="com.actions.MemberAction" />
-	
 	<bean id="productDao" class="com.dao.ProductDaoImpl" />
 	<bean id="productService" class="com.services.ProductServiceImpl" />
+	
+	<bean id="shoppingCart" class="com.actions.ShoppingCartAction" />
+	<bean id="shoppingCartDao" class="com.dao.ShoppingCartDaoImpl" />
+	<bean id="shoppingCartService" class="com.services.ShoppingCartServiceImpl" />
 </beans>
