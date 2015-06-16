@@ -31,4 +31,8 @@ public interface ProductService {
 
 	//修改用户电话
 	public boolean updateMemTel(String name, String newMemTel);
+	
+	// simpleem
+	public List<Product> searchProductByCategory(String category);
+	
 }

@@ -52,4 +52,8 @@ public class ProductServiceImpl implements ProductService{
 		return productDao.updateMemTel(name, newMemTel);
 	}
 
+	// simpleem
+	public List<Product> searchProductByCategory(String category) {
+		return productDao.searchProductByCategory(category);
+	}
 }

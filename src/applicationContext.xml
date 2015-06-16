@@ -30,4 +30,10 @@
 	<bean id="shoppingCart" class="com.actions.ShoppingCartAction" />
 	<bean id="shoppingCartDao" class="com.dao.ShoppingCartDaoImpl" />
 	<bean id="shoppingCartService" class="com.services.ShoppingCartServiceImpl" />
+	
+	<!-- simpleem -->
+	<bean id="updateProduct" class="com.actions.updateAction" />
+	<bean id="updateService" class="com.services.updateServiceImpl" /> 
+	<bean id="getCategoryProduct" class="com.actions.getProductAction" />
+
 </beans>

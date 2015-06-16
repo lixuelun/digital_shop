@@ -19,5 +19,14 @@
 		<action name="shoppingCart" class="shoppingCart">
 			<result name="success">/shoppingCart.jsp</result>
 		</action>
+		
+		<!-- simpleem -->
+		<action name="update" class="updateProduct">
+			<result name="success">/show_product.jsp</result>
+		</action>
+		<action name="Cotegory" class="getCategoryProduct">
+			<result name="success">/getproduct.jsp</result>
+		</action>
+		<!-- -->
 	</package>
 </struts>    

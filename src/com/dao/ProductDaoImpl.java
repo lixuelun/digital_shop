@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
@@ -97,5 +98,22 @@ public class ProductDaoImpl implements ProductDao{
 				return true;
 			}	
 		return false;
+	}
+	
+	// simpleem
+	// 插入一条数据
+	public void insertIntoTableWithProduct(Product product){
+		
+		Session session = sessionFactory.getCurrentSession();
+		session.beginTransaction();
+		session.save(product);	
+	}
+	
+	// 查找分类
+	public List<Product> searchProductByCategory(String category){
+		
+		String hql="from Product as pro where pro.proCategoryid = '"+category+"'";
+		List<Product> list=sessionFactory.getCurrentSession().createQuery(hql).list();
+		return list;
 	}
 }

@@ -29,4 +29,14 @@ public interface ProductDao {
 	
 	//修改用户电话
 	public boolean updateMemTel(String name, String newMemTel);
+
+	// simpleem
+	// 插入一个商品
+	public void insertIntoTableWithProduct(Product product);
+	
+	// 查找分类
+	public List<Product> searchProductByCategory(String category);
+	
+
+
 }
