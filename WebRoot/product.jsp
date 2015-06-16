@@ -24,6 +24,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  	<jsp:include page="search_product.jsp" />
+  	<div align="center">
   	<s:iterator value="#request.list" var="product">
   		<div id="div1" class="inline_div"><img src="../<s:property value="#product.proImg" />"></img></div>
   		<s:form action="product">
@@ -39,6 +41,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   		<p><b>商品信息</b></p>
   		<div id="div3"><s:property value="#product.proContent" /></div>
   	</s:iterator>
+  	</div>
   	<a href="search.action?search=<s:property value="#request.searchBox" />" >返回</a>
   </body>
 </html>

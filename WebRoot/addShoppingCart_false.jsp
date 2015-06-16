@@ -22,7 +22,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
 
   </head>
+  	<jsp:include page="search_product.jsp" />
 	加入购物车失败！<br>
-	<a href="product.action?product.proName=<s:property value="#request.proname" />" >返回</a>
+	<a href="product.action?product.proName=<s:property value="#request.proname" />" >点此返回</a>
   </body>
 </html>

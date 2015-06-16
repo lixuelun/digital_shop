@@ -24,6 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  	<jsp:include page="search_product.jsp" />
     <s:if test="#request.list.size()!=0">
   		<table align="center" border="2" cellpadding="5">
   			<tr>

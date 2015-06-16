@@ -17,7 +17,17 @@ public class ShoppingCartAction extends ActionSupport {
 	@Resource
 	private ShoppingCartService ShoppingCartService;
 	private ShoppingCart shoppingCart;
+	private String name;
 
+	
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public ShoppingCart getShoppingCart() {
 		return shoppingCart;
@@ -43,10 +53,8 @@ public class ShoppingCartAction extends ActionSupport {
 	}
 	
 	public String deleteShoppingCart(){
-		int cart_id=shoppingCart.getCartId();
-		System.out.print(cart_id);
 		HttpServletRequest request=ServletActionContext.getRequest();
-		if(ShoppingCartService.deleteShoppingCartBycart_id(cart_id)){
+		if(ShoppingCartService.deleteShoppingCartBycart_id(name)){
 			 request.setAttribute("tip","É¾³ý³É¹¦");
 			 return execute();
 		}

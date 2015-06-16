@@ -24,10 +24,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  <s:if test="#request.tip!=null">
-  		提示：<s:property value="#request.tip" />
+  	<jsp:include page="search_product.jsp" />
+  	<s:if test="#request.tip!=null">
+  		提示：<s:property value="#request.tip" /><br>
   	</s:if>
+  	
     <s:if test="#request.list.size()!=0">
+    <h2><b>购物车:</b></h2>
   		<table align="center" border="2" cellpadding="5">
   			<tr>
   				<td>商品图片</td>
@@ -36,17 +39,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   				<td>库存数量</td>
   			</tr>
   			<s:iterator value="#request.list" var="shoppingCart">
-  				<tr>
-  					<td><s:property value="#shoppingCart.img" /></td>
-  					<td><s:property value="#shoppingCart.name" /></td>
-  					<td><s:property value="#shoppingCart.price" /></td>
-  					<td><s:property value="#shoppingCart.quantity" /></td>
-					<td>
-						<a href="shoppingCart.action?shoppingCart.cartId=<s:property value="#shoppingCart.cartId" />" onclick="deleteShoppingCart()">
-  							删除商品
-  						</a>
-					</td>				
-  				</tr>
+  				<s:form action="shoppingCart" theme = "simple">
+  					<tr>
+  						<td><img src="../<s:property value="shoppingCart.img" />"></img></td>
+  						<td><s:property value="#shoppingCart.name" /></td>
+  						<td><s:property value="#shoppingCart.price" /></td>
+  						<td><s:property value="#shoppingCart.quantity" /></td>
+  						<s:hidden name="name" value="%{#shoppingCart.name}"></s:hidden>
+  						<td><s:submit value="删除商品" method="deleteShoppingCart" /></td>
+					</tr>
+  				</s:form>
   			</s:iterator>
   		</table>
   	</s:if>

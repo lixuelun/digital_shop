@@ -24,10 +24,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  	<a href="search_product.jsp" >返回</a>
+  	<jsp:include page="search_product.jsp" />
   	<s:if test="#request.tip!=null">
   		提示：<s:property value="#request.tip" />
   	</s:if>
+  	<h2><b>个人资料:</b></h2>
+  	<div align="center">
 	<s:form action="member">
   		<table border="2">
     		<s:iterator value="#request.list" var="member">
@@ -63,5 +65,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   			</s:iterator>
   		</table>
 	</s:form>
+	</div>
   </body>
 </html>

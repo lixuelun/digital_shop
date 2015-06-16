@@ -13,13 +13,14 @@ import com.domain.ShoppingCart;
 public class ShoppingCartServiceImpl implements ShoppingCartService{
 	@Resource
 	ShoppingCartDao shoppingCartDao;
+	
 	public List<ShoppingCart> searchShoppingCartByUserName(String username) {
 		// TODO Auto-generated method stub
 		return shoppingCartDao.searchShoppingCartByUserName(username);
 	}
-	public boolean deleteShoppingCartBycart_id(Integer cart_id) {
+	public boolean deleteShoppingCartBycart_id(String name) {
 		// TODO Auto-generated method stub
-		return shoppingCartDao.deleteShoppingCartBycart_id(cart_id);
+		return shoppingCartDao.deleteShoppingCartBycart_id(name);
 	}
 	
 }

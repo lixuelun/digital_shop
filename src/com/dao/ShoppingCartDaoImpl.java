@@ -18,11 +18,11 @@ public class ShoppingCartDaoImpl implements ShoppingCartDao{
 		return list;
 		
 	}
-	public boolean  deleteShoppingCartBycart_id(Integer cart_id) {
-		String hql = "delete from ShoppingCart where ad.cartId ='"+cart_id+"'";
+	public boolean  deleteShoppingCartBycart_id(String name) {
+		String hql = "delete from ShoppingCart ad where ad.name ='"+name+"'";
 		sessionFactory.getCurrentSession().createQuery(hql).executeUpdate();
-		String hql1="from ShoppingCart as ad where ad.cartId'"+cart_id+"'";
-		List<ShoppingCart> list=sessionFactory.getCurrentSession().createQuery(hql).list();
+		String hql2="from ShoppingCart as ad where ad.name ='"+name+"'";
+		List<ShoppingCart> list=sessionFactory.getCurrentSession().createQuery(hql2).list();
 		if(list.size()!=0)
 			return false;
 		else 

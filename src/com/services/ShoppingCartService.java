@@ -7,5 +7,5 @@ import com.domain.ShoppingCart;
 public interface ShoppingCartService {
 	public List<ShoppingCart> searchShoppingCartByUserName(String username);
 
-	public boolean deleteShoppingCartBycart_id(Integer cart_id);
+	public boolean deleteShoppingCartBycart_id(String name);
 }
