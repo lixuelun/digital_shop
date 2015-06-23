@@ -18,9 +18,68 @@ public class MemberAction extends ActionSupport{
 	private String newMemMail;
 	private String newMemTel;
 	
+	
+	private String re_name;
+	private String re_pass;
+	private String re_adds;
+	private String re_mail;
+	private String re_tel;
+	
 	@Resource
 	private ProductService productService;
 	
+	public String register(){
+		HttpServletRequest request=ServletActionContext.getRequest();		
+		if(productService.register(re_name,re_pass,re_adds,re_mail,re_tel)){
+			request.setAttribute("tip", "注册成功");
+			return "re_success";
+		}else{
+			request.setAttribute("tip", "注册失败");
+			return "re_false";
+		}	
+	}
+	
+	public String getRe_name() {
+		return re_name;
+	}
+
+	public void setRe_name(String re_name) {
+		this.re_name = re_name;
+	}
+
+	public String getRe_pass() {
+		return re_pass;
+	}
+
+	public void setRe_pass(String re_pass) {
+		this.re_pass = re_pass;
+	}
+
+	public String getRe_adds() {
+		return re_adds;
+	}
+
+	public void setRe_adds(String re_adds) {
+		this.re_adds = re_adds;
+	}
+
+	public String getRe_mail() {
+		return re_mail;
+	}
+
+	public void setRe_mail(String re_mail) {
+		this.re_mail = re_mail;
+	}
+
+	public String getRe_tel() {
+		return re_tel;
+	}
+
+	public void setRe_tel(String re_tel) {
+		this.re_tel = re_tel;
+	}
+
+
 	public String updateMemPass(){
 		String name=(String)ActionContext.getContext().getSession().get("username");
 		HttpServletRequest request=ServletActionContext.getRequest();		
@@ -113,8 +172,10 @@ public class MemberAction extends ActionSupport{
 	
 	public String execute(){
 		//登陆完成把用户名存入session中
-		ActionContext.getContext().getSession().put("username", "member1");
+		//ActionContext.getContext().getSession().put("username", "member1");
 		String name=(String)ActionContext.getContext().getSession().get("username");
+		if(name==null)
+			return INPUT;
 		List<Member> list=productService.searchMemberByName(name);
 		HttpServletRequest request=ServletActionContext.getRequest();
 		request.setAttribute("list", list);

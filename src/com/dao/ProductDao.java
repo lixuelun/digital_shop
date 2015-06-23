@@ -37,6 +37,7 @@ public interface ProductDao {
 	// 查找分类
 	public List<Product> searchProductByCategory(String category);
 	
-
+	//注册用户
+	public boolean register(String re_name,String re_pass,String re_adds,String re_mail,String re_tel);
 
 }

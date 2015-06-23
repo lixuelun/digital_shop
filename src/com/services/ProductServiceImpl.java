@@ -56,4 +56,9 @@ public class ProductServiceImpl implements ProductService{
 	public List<Product> searchProductByCategory(String category) {
 		return productDao.searchProductByCategory(category);
 	}
+
+	public boolean register(String re_name, String re_pass, String re_adds,
+			String re_mail, String re_tel) {
+		return productDao.register(re_name, re_pass, re_adds, re_mail, re_tel);
+	}
 }

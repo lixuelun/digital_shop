@@ -35,4 +35,7 @@ public interface ProductService {
 	// simpleem
 	public List<Product> searchProductByCategory(String category);
 	
+	//×¢²áÓÃ»§
+	public boolean register(String re_name,String re_pass,String re_adds,String re_mail,String re_tel);
+	
 }

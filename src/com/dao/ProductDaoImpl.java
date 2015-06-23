@@ -116,4 +116,21 @@ public class ProductDaoImpl implements ProductDao{
 		List<Product> list=sessionFactory.getCurrentSession().createQuery(hql).list();
 		return list;
 	}
+
+	public boolean register(String re_name, String re_pass, String re_adds,
+			String re_mail, String re_tel) {
+		Member member=new Member();
+		member.setMemAdds(re_adds);
+		member.setMemMail(re_mail);
+		member.setMemName(re_name);
+		member.setMemPass(re_pass);
+		member.setMemTel(re_tel);
+		sessionFactory.getCurrentSession().persist(member);
+		String hql="from Member as ac where ac.memName='"+re_name+"' and ac.memPass='"+re_pass+"' and ac.memAdds='"+re_adds+"' and ac.memMail='"+re_mail+"' and ac.memTel='"+re_tel+"'";
+		List<Product> list=sessionFactory.getCurrentSession().createQuery(hql).list();
+		if(list.size()==0)
+			return false;
+		else
+			return true;
+	}
 }

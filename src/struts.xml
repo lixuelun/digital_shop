@@ -14,7 +14,11 @@
 		
 		<action name="member" class="member">
 			<result name="success">/member_information.jsp</result>
+			<result name="input">/login.jsp</result>
+			<result name="re_success">/login.jsp</result>
+			<result name="re_false">/register.jsp</result>
 		</action>
+		
 	
 		<action name="shoppingCart" class="shoppingCart">
 			<result name="success">/shoppingCart.jsp</result>
