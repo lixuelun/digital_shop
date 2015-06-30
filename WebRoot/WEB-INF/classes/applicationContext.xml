@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+	<context:annotation-config />
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation"
+			value="classpath:hibernate.cfg.xml">
+		</property>
+	</bean>
+	<bean id="txManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<tx:annotation-driven transaction-manager="txManager" />
+	
+	<bean id="searchProduct" class="com.actions.SearchAction" />
+	<bean id="product" class="com.actions.ProductAction" />
+	<bean id="member" class="com.actions.MemberAction" />
+	<bean id="productDao" class="com.dao.ProductDaoImpl" />
+	<bean id="productService" class="com.services.ProductServiceImpl" />
+	
+	<bean id="shoppingCart" class="com.actions.ShoppingCartAction" />
+	<bean id="shoppingCartDao" class="com.dao.ShoppingCartDaoImpl" />
+	<bean id="shoppingCartService" class="com.services.ShoppingCartServiceImpl" />
+	
+	<!-- simpleem -->
+	<bean id="updateProduct" class="com.actions.updateAction" />
+	<bean id="updateService" class="com.services.updateServiceImpl" /> 
+	<bean id="getCategoryProduct" class="com.actions.getProductAction" />
+	
+	<bean id="loginAction" class="com.actions.LoginAction" />
+	<bean id="loginService" class="com.services.LoginServiceImpl" /> 
+	<bean id="loginDao" class="com.dao.LoginDaoImpl" />
+
+
+</beans>

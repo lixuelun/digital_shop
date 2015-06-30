@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="struts" extends="struts-default" namespace="/">
+		<action name="search" class="searchProduct">
+			<result name="success">/show_product.jsp</result>
+		</action>
+		
+		<action name="product" class="product">
+			<result name="success">/product.jsp</result>
+			<result name="addSuccess">/addShoppingCart_success.jsp</result>
+			<result name="addFalse">/addShoppingCart_false.jsp</result>
+		</action>
+		
+		<action name="member" class="member">
+			<result name="success">/member_information.jsp</result>
+			<result name="input">/login.jsp</result>
+			<result name="re_success">/login.jsp</result>
+			<result name="re_false">/register.jsp</result>
+		</action>
+		
+	
+		<action name="shoppingCart" class="shoppingCart">
+			<result name="success">/shoppingCart.jsp</result>
+			<result name="paysuccess">/shoppingCart.jsp</result>
+			<result name="payfalse">/shoppingCart.jsp</result>
+		</action>
+		
+		<!-- simpleem -->
+		<action name="update" class="updateProduct">
+			<result name="success">/index.jsp</result>
+			<result name="input">/search.jsp</result>
+		</action>
+		<action name="Cotegory" class="getCategoryProduct">
+			<result name="success">/getproduct.jsp</result>
+		</action>
+		<!-- -->
+		
+		<action name="addAdvert" class="updateAdvert">
+			<result name="success">/index.jsp</result>
+			<result name="input">/search.jsp</result>
+		</action>
+		<action name="getCotegory" class="getCategoryAdvert">
+			<result name="success">/getAdvert.jsp</result>
+		</action>
+		
+		<action name="login" class="loginAction">
+			<result name="success">/search_product.jsp</result>
+			<result name="false">/login.jsp</result>
+			<result name="quit">/login.jsp</result>
+		</action>
+	</package>
+</struts>    
